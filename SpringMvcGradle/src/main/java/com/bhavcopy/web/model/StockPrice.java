@@ -16,12 +16,14 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @EntityListeners(AuditingEntityListener.class)
 public class StockPrice {
 	
-	/*@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-*/	@Id @GeneratedValue(generator="system-uuid")
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
+	/*@Id @GeneratedValue(generator="system-uuid")
 	@GenericGenerator(name="system-uuid", strategy = "uuid")
+	*/
 	@Column(name = "user_id")
-	public String StockId;
+	public Long StockId;
 	
 	@Column(name = "unique_identifier",length=255)
 	private String uniqueIdentifier;
@@ -65,13 +67,12 @@ public class StockPrice {
 	@Column(name = "isin",length=255)
 	public String ISIN;
 
-	
 
-	public String getStockId() {
+	public Long getStockId() {
 		return StockId;
 	}
 
-	public void setStockId(String stockId) {
+	public void setStockId(Long stockId) {
 		StockId = stockId;
 	}
 

@@ -28,7 +28,7 @@ import com.bhavcopy.web.model.User;
 import com.bhavcopy.web.service.UserService;
 import com.bhavcopy.web.util.CommonUtil;
 
-@Controller
+@Controller("/prerna")
 public class WebController {
 
 	@Autowired
